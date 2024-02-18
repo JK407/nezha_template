@@ -1,26 +1,30 @@
-<script>
-    // 动画
-    window.onload = function () {
-        $('.nb-menu').css('visibility', 'visible');
-        $('.footer').css('visibility', 'visible');
-        $('.nb-menu .right.menu,.nb-menu .item')
-            .transition({
-                animation: 'fade down in',
-                interval: 200,
-            });
-        $('.footer .container b,.footer .container small')
-            .transition({
-                animation: 'fade up in',
-                interval: 200,
-            });
-        $('.accordion,.cards .card,table,.table tr,.service-status h2')
-            .transition({
-                animation: 'scale in',
-                interval: 150
-            });
-    }
-</script>
 <style>
+    /* 自定义字体 */
+    @font-face {
+        font-family: 'Harmony Hans';
+        src: url(https://cdn.amzayo.top/static/fonts/HarmonyOSHans-Medium.woff2) format('woff2');
+    }
+
+    * {
+        font-family: 'Harmony Hans';
+    }
+
+    *:not(.content) {
+        transition: all .2s;
+    }
+
+    /* 背景图片 */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: url(https://cdn.amzayo.top/static/public/luban/Luban_time_tour_poster.webp) center/cover no-repeat;
+    }
+
     :root {
         --popup-filter: blur(2px);
         --lc-color-light: rgba(235, 235, 235, 0.8);
@@ -46,7 +50,7 @@
         --bc-color-light: rgba(255, 255, 255, 0.1);
         --the-color-light: rgba(255, 255, 255, 0.4);
         --he-color-light: rgba(255, 255, 255, 0.5);
-        --message-color-light: rgb(22, 22, 22, 1); 
+        --message-color-light: rgb(22, 22, 22, 1);
         --popup-color-light:rgba(235, 235, 235, 0.6);
 
         --bc-color-dark: rgba(0, 0, 0, 0.3);
@@ -55,7 +59,8 @@
         --he-color-dark: rgba(35, 35, 35, 0.7);
         --message-color-dark: rgb(235, 235, 235, 0.8);
         --popup-color-dark:rgba(78, 78, 78, 0.6); */
-        
+
+
     }
 
     /* 暗色模式适配 */
@@ -203,7 +208,6 @@
             background-color: var(--lc-color-light);
             padding: .25rem .25rem !important;
             margin: .5rem .3rem !important;
-            visibility: hidden;
         }
 
         /* 小卡片头部调整 */
@@ -246,7 +250,6 @@
             border-radius: 1rem;
             background-color: var(--lc-color-light);
             outline: none !important;
-            visibility: hidden;
         }
 
         /* 小卡片头部调整 */
@@ -268,45 +271,6 @@
         }
     }
 
-    /* 自定义字体 */
-    @font-face {
-        font-family: 'Harmony Hans';
-        src: url(https://cdn.amzayo.top/static/fonts/HarmonyOSHans-Medium.woff2) format('woff2');
-    }
-
-    * {
-        font-family: 'Harmony Hans';
-    }
-
-    *:not(.content) {
-        transition: all .2s;
-    }
-
-    /* 背景图片 */
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: url(https://cdn.amzayo.top/static/public/luban/Luban_time_tour_poster.webp) center/cover no-repeat;
-    }
-
-    /* 初始隐藏元素，用于动画效果，关闭动画效果请删除 */
-    .nb-menu,
-    .nb-menu .right.menu,
-    .nb-menu .item,
-    .accordion,
-    .footer,
-    .footer .container b,
-    .footer .container small,
-    .table,
-    .table tr,
-    .service-status h2 {
-        visibility: hidden;
-    }
 
     /* 菜单颜色 */
     .ui.large.menu {
@@ -619,9 +583,9 @@
 
 
     /*
-    
+
     以下样式为部分原版主题样式，由于原版主题样式有些强制性，不方便二次修改，故拿出来
-    
+
     */
 
     .ui.mini.message {
